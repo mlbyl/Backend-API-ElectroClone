@@ -5,7 +5,7 @@ const connectDatabase = require('./src/helpers/connect-database')
 dotenv.config()
 
 //Routes
-const testRouter = require('./src/routes/router')
+const userRouter = require('./src/routes/user-route')
 //Helper function for connection to Database
 connectDatabase()
 
@@ -15,7 +15,7 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use("/", testRouter)
+app.use("/", userRouter)
 
 app.listen(PORT, () => {
   console.log(`App listening on Port : ${PORT}`)
